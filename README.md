@@ -1,7 +1,7 @@
 # Shout-to-Tweet
 Don't get too loud otherwise everything you say will be tweeted live.
 
-# Requirements
+# Requirements and Installation
 - python 3
 - windows
   - install audiopy wheel using this tutorial: https://www.youtube.com/watch?v=AKymlea8sYM
