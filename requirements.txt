@@ -8,7 +8,6 @@ graphviz==0.14
 idna==2.10
 oauthlib==3.1.0
 pathspec==0.8.0
-PyAudio @ file:///C:/Python38/Scripts/PyAudio-0.2.11-cp38-cp38-win_amd64.whl
 PySocks==1.7.1
 regex==2020.7.14
 requests==2.24.0
