@@ -4,8 +4,9 @@ Don't get too loud otherwise everything you say will be tweeted live.
 # Requirements and Installation
 - python 3
 - install PyAudio
+  - **MAKE SURE YOU DO THIS IT IS NOT IN requirements.txt**
   - windows
-    - (**MAKE SURE YOU DO THIS IT IS NOT IN requirements.txt**) install audiopy wheel using this tutorial: https://www.youtube.com/watch?v=AKymlea8sYM
+    - install audiopy wheel using this tutorial: https://www.youtube.com/watch?v=AKymlea8sYM
   - other platforms
     - pray that pip install works
     - maybe that other tutorial will work too
