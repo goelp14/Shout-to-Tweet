@@ -86,7 +86,7 @@ def listen_decibel():
         print(decibel) # printing decibel level out because it looks cool
 
         # If you are yelling...
-        if decibel > 0.2:
+        if decibel > 0.5:
             stream.close() # Stop the stream to make sure that nothing extra is being picked up
             return(recognize_speech_from_mic(r, mic)) # Turn captured audio data into text
 
