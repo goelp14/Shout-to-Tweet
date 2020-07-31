@@ -1,8 +1,10 @@
 import tweepy
+
 import time
 import pyaudio
 import struct
 import math
+
 import speech_recognition as sr
 
 # Using recognize_speech_from_mic() from https://realpython.com/python-speech-recognition/ because I AM LAZY
@@ -84,7 +86,7 @@ def listen_decibel():
         print(decibel) # printing decibel level out because it looks cool
 
         # If you are yelling...
-        if decibel > 0.4:
+        if decibel > 0.2:
             stream.close() # Stop the stream to make sure that nothing extra is being picked up
             return(recognize_speech_from_mic(r, mic)) # Turn captured audio data into text
 
@@ -101,6 +103,11 @@ def tweet(message):
         print("Credentials Verified!")
         api.update_status(message.upper()) # Tweet audio message in all caps!
         print("Tweeted!")
+        tweet = api.user_timeline(screen_name = 'etalerni', count = 100, include_rts = False)[0]
+        twid =  tweet.id
+        sn = tweet.user.screen_name
+        print("Link to tweet:\n\nhttps://twitter.com/{0}/status/{1}".format(sn,twid))
+
     except:
         print("Nope something is wrong with your credentials.")
 
@@ -110,7 +117,10 @@ def main():
         print("Listening for your yelling!")
         res = listen_decibel()
         print("You said: {0}".format(res["transcription"]))
-        tweet(res["transcription"])
+        if (res["success"] == False):
+            print(res["error"])
+        else:
+            tweet(res["transcription"])
 
 if __name__ == "__main__":
     # execute only if run as a script
